@@ -8,7 +8,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.pengl.nfctager.activity.ReadMUActivity;
 import com.example.pengl.nfctager.activity.ReadTextActivity;
+import com.example.pengl.nfctager.activity.RunAppActivity;
+import com.example.pengl.nfctager.activity.WriteMUActivity;
+import com.example.pengl.nfctager.activity.WriteTextActivity;
 
 public class MainActivity extends AppCompatActivity {
     private static final String[] strs = new String[]{
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     private void switchActivity(int position) {
         switch (position) {
             case 0: //自动运行程序
-//                startActivity(new Intent(this, RunAppActivity.class));
+                startActivity(new Intent(this, RunAppActivity.class));
                 break;
             case 1: //自动打开网页
 //                startActivity(new Intent(this, RunUrlActivity.class));
@@ -49,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, ReadTextActivity.class));
                 break;
             case 3: //写NFC标签中的文本数据
-//                startActivity(new Intent(this, WriteTextActivity.class));
+                startActivity(new Intent(this, WriteTextActivity.class));
                 break;
             case 4: //读NFC标签中的Uri数据
 //                startActivity(new Intent(this, ReadUriActivity.class));
@@ -58,10 +62,10 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(new Intent(this, WriteUriActivity.class));
 //                break;
             case 6: //读NFC标签非NDEF格式的数据
-//                startActivity(new Intent(this, ReadMUActivity.class));
+                startActivity(new Intent(this, ReadMUActivity.class));
                 break;
             case 7: //写NFC标签非NDEF格式的数据
-//                startActivity(new Intent(this, WriteMUActivity.class));
+                startActivity(new Intent(this, WriteMUActivity.class));
                 break;
             default:
                 break;

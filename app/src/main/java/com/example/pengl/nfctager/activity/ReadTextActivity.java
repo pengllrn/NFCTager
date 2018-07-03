@@ -84,11 +84,14 @@ public class ReadTextActivity extends BaseNfcActivity {
             //下面开始NDEF文本数据第一个字节，状态字节
             //判断文本是基于UTF-8还是UTF-16的，取第一个字节"位与"上16进制的80，16进制的80也就是最高位是1，
             //其他位都是0，所以进行"位与"运算后就会保留最高位
+            //payload[0]为payload的第一个字节，有八位，0x80表示第一位
             String textEncoding = ((payload[0] & 0x80) == 0) ? "UTF-8" : "UTF-16";
             //3f最高两位是0，第六位是1，所以进行"位与"运算后获得第六位
             int languageCodeLength = payload[0] & 0x3f;
             //下面开始NDEF文本数据第二个字节，语言编码
             //获得语言编码
+            //通过使用指定的 charset 解码指定的 byte 子数组，构造一个新的 String。
+            //bytes - 要解码为字符的 byte  / offset - 要解码的第一个 byte 的索引 /  length - 要解码的 byte 数
             String languageCode = new String(payload, 1, languageCodeLength, "US-ASCII");
             //下面开始NDEF文本数据后面的字节，解析出文本
             String textRecord = new String(payload, languageCodeLength + 1,

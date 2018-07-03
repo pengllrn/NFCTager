@@ -8,4 +8,5 @@
     <string name="str_write_uri">写NFC标签中的Uri数据</string>
     <string name="str_read_mu">读NFC标签非NDEF格式的数据</string>
     <string name="str_write_mu">写NFC标签非NDEF格式的数据</string>
+    <string name="title_activity_write_text">WriteTextActivity</string>
 </resources>
